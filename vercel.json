@@ -1,0 +1,20 @@
+{
+    "version": 2,
+    "functions": {
+      "api/customers.ts": {
+        "runtime": "nodejs16.x"
+      }
+    },
+    "builds": [
+    {
+      "src": "src/server.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/src/server.ts"
+    }
+  ]
+  }
